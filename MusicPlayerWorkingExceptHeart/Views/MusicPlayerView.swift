@@ -89,7 +89,7 @@ struct MusicPlayerView: View {
                     Spacer()
                      Button(action: { viewModel.previousTrack() }) {
                              PreviousTrackIcon()
-                                 .frame(height: 36)
+                                 .frame(height: 26)
                                  .foregroundColor(iconColor)
                          }
                          .accessibilityLabel("Previous track")
@@ -103,7 +103,7 @@ struct MusicPlayerView: View {
                     Spacer()
                      Button(action: { viewModel.nextTrack() }) {
                              NextTrackIcon()
-                                 .frame(height: 36)
+                                 .frame(height: 26)
                                  .foregroundColor(iconColor)
                          }
                          .accessibilityLabel("Next track")
@@ -135,3 +135,30 @@ struct MusicPlayerView: View {
     }
 }
 
+#if DEBUG
+struct MusicPlayerView_Previews: PreviewProvider {
+    static var previews: some View {
+        let viewModel = MusicPlayerViewModel()
+         let sampleTrack = MusicTrack(
+            title: "Black Friday (pretty like the sun)",
+            artist: "Lost Frequencies, Tom Odell, Poppy Baskcomb",
+            albumArtAssetName: "Washed_Out_-_Purple_Noon",
+            audioURL: URL(fileURLWithPath: "Black Friday (pretty like the sun) - Lost Frequencies.mp3"), // Placeholder for preview
+            duration: 145 // Example duration
+            // No isLocal argument here
+        )
+
+        // Use loadPlaylist to set the track
+        viewModel.loadPlaylist([sampleTrack])
+
+        // Adjust other @Published properties as needed for the preview
+        viewModel.currentTime = 90
+        viewModel.isPlaying = true // Optional: Set to true if you want to preview the playing state
+
+        return MusicPlayerView(viewModel: viewModel)
+            .previewLayout(.sizeThatFits)
+            .padding()
+            .background(Color.black)
+    }
+}
+#endif

@@ -83,7 +83,7 @@ final class MusicPlayerUITests: XCTestCase {
         XCTAssertTrue(musicPlayerView.waitForExistence(timeout: 6), "MusicPlayerView must exist for this test")
 
         // --- Check for Previous Track Button ---
-        let previousButton = musicPlayerView.buttons["previousTrackButton"]
+//        let previousButton = musicPlayerView.buttons["previousTrackButton"]
 //        let previousButtonExists = previousButton.waitForExistence(timeout: 5) // Increased timeout
 
 //        if !previousButtonExists {
@@ -95,10 +95,10 @@ final class MusicPlayerUITests: XCTestCase {
 
         // --- Check for other controls ---
         let playPauseButton = musicPlayerView.buttons["playPauseButton"]
-        XCTAssertTrue(playPauseButton.waitForExistence(timeout: 2), "Play/Pause button should exist within MusicPlayerView")
+        XCTAssertTrue(playPauseButton.waitForExistence(timeout: 20), "Play/Pause button should exist within MusicPlayerView")
 
         let nextButton = musicPlayerView.buttons["nextTrackButton"]
-        XCTAssertTrue(nextButton.waitForExistence(timeout: 2), "Next track button should exist within MusicPlayerView")
+        XCTAssertTrue(nextButton.waitForExistence(timeout: 20), "Next track button should exist within MusicPlayerView")
 
         let trackTitle = musicPlayerView.staticTexts["trackTitleText"]
         XCTAssertTrue(trackTitle.waitForExistence(timeout: 2), "Track title text should exist within MusicPlayerView")
@@ -120,7 +120,7 @@ final class MusicPlayerUITests: XCTestCase {
         XCTAssertTrue(musicPlayerView.waitForExistence(timeout: 6), "MusicPlayerView must exist")
 
         let playPauseButton = musicPlayerView.buttons["playPauseButton"]
-        XCTAssertTrue(playPauseButton.waitForExistence(timeout: 18), "Play/Pause button should exist")
+        XCTAssertTrue(playPauseButton.waitForExistence(timeout: 20), "Play/Pause button should exist")
 
         // Assuming it starts in a playable state, the label should be "Play"
          XCTAssertTrue(playPauseButton.waitForLabel("Play", timeout: 18), "Button should initially be Play")

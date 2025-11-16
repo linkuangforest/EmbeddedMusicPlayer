@@ -373,4 +373,3 @@ class MusicPlayerViewModel: NSObject, ObservableObject {
         bufferedTime = 0
     }
 }
-

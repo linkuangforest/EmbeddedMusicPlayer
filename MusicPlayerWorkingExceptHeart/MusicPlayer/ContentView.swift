@@ -161,7 +161,7 @@ struct ContentView: View {
         if let track2 = loadBundleTrack(title: "Let It Be", artist: "The Beatles", fileName: "Let It Be") {
             tracks.append(track2)
         }
-        if let track3 = loadBundleTrack(title: "Takes Me Back Home", artist: "Wasia Project", fileName: "Takes Me Back Home") {
+        if let track3 = loadBundleTrack(title: "To Get Better", artist: "Wasia Project", fileName: "To Get Better") {
             tracks.append(track3)
         }
         return tracks
@@ -175,3 +175,12 @@ struct ContentView: View {
         return MusicTrack(title: title, artist: artist, albumArtAssetName: albumArt, audioURL: url, duration: 0)
     }
 }
+
+#if DEBUG
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+          // .environmentObject(AppState.shared) // If AppState is used via EnvironmentObject
+    }
+}
+#endif
