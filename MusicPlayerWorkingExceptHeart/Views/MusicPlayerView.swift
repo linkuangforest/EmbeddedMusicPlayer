@@ -21,8 +21,8 @@ struct MusicPlayerView: View {
     let defaultImageName = "Gemini_music_player_logo"
 
     // Fonts
-    private let titleFont = Font.custom("Google Sans Medium", size: 24)
-    private let titleUIFont = UIFont(name: "Google Sans Medium", size: 24) ?? UIFont.systemFont(ofSize: 24, weight: .medium)
+    private let titleFont = Font.custom("GoogleSans-Medium", size: 24)
+    private let titleUIFont = UIFont(name: "GoogleSans-Medium", size: 24) ?? UIFont.systemFont(ofSize: 24, weight: .medium)
     private let artistFont = Font.custom("GoogleSansText-Regular", size: 16)
     private let artistUIFont = UIFont(name: "GoogleSansText-Regular", size: 16) ?? UIFont.systemFont(ofSize: 16)
 
@@ -89,7 +89,7 @@ struct MusicPlayerView: View {
                     Spacer()
                      Button(action: { viewModel.previousTrack() }) {
                              PreviousTrackIcon()
-                                 .frame(height: 26)
+                                 .frame(width: 36, height: 36)
                                  .foregroundColor(iconColor)
                          }
                          .accessibilityLabel("Previous track")
@@ -97,13 +97,15 @@ struct MusicPlayerView: View {
                     Spacer()
                      Button(action: { viewModel.isPlaying ? viewModel.pause() : viewModel.play() }) {
                         Image(systemName: viewModel.isPlaying ? "pause.circle.fill" : "play.circle.fill")
-                            .font(.system(size: 72)).frame(width: 72, height: 72).foregroundColor(accentColor)
+                            .font(.system(size: 72))
+                            .frame(width: 72, height: 72)
+                            .symbolRenderingMode(.palette).foregroundStyle(.white, accentColor)
                     }.accessibilityLabel(viewModel.isPlaying ? "Pause" : "Play")
                          .accessibilityIdentifier("playPauseButton")
                     Spacer()
                      Button(action: { viewModel.nextTrack() }) {
                              NextTrackIcon()
-                                 .frame(height: 26)
+                                 .frame(width: 36, height: 36)
                                  .foregroundColor(iconColor)
                          }
                          .accessibilityLabel("Next track")
@@ -112,7 +114,8 @@ struct MusicPlayerView: View {
                      ControlButton(
                         systemName: track.isFavorited ? "heart.fill" : "heart",
                         size: 36,
-                        color: track.isFavorited ? accentColor : iconColor,
+//                        color: track.isFavorited ? accentColor : iconColor,
+                        color: track.isFavorited ? iconColor : iconColor,
                         accessibilityLabel: track.isFavorited ? "Favorited" : "Not favorited"
                      ) {
                         viewModel.toggleFavorite()
@@ -120,7 +123,7 @@ struct MusicPlayerView: View {
                     Spacer()
                 }
             }
-            .padding(24).background(backgroundColor).cornerRadius(16).frame(maxWidth: 480)
+            .padding(32).background(backgroundColor).cornerRadius(16).frame(maxWidth: 480)
         } else {
             Text("No track loaded").foregroundColor(primaryTextColor).padding().background(backgroundColor).cornerRadius(16)
         }

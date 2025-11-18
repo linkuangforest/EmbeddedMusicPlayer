@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C649B5B42EC6EA0F00FE53FB /* GoogleSans-VariableFont_GRAD,opsz,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C649B5B32EC6EA0F00FE53FB /* GoogleSans-VariableFont_GRAD,opsz,wght.ttf */; };
+		C68CCC5C2ECC0668005D1146 /* GoogleSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C68CCC5B2ECC0668005D1146 /* GoogleSans-Medium.ttf */; };
 		C6AF568C2EC6A9B40012EDE4 /* GoogleSansText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6AF568B2EC6A9B40012EDE4 /* GoogleSansText-Regular.ttf */; };
 		C6AF56902EC6ADC20012EDE4 /* GoogleSansText-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6AF568F2EC6ADC20012EDE4 /* GoogleSansText-Medium.ttf */; };
 /* End PBXBuildFile section */
@@ -48,6 +49,7 @@
 		C679C9DF2EBDAC4A00CE21BD /* MusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C679C9EF2EBDAC4B00CE21BD /* MusicPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C679C9F92EBDAC4B00CE21BD /* MusicPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C68CCC5B2ECC0668005D1146 /* GoogleSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GoogleSans-Medium.ttf"; sourceTree = "<group>"; };
 		C6AF568B2EC6A9B40012EDE4 /* GoogleSansText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GoogleSansText-Regular.ttf"; sourceTree = "<group>"; };
 		C6AF568F2EC6ADC20012EDE4 /* GoogleSansText-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GoogleSansText-Medium.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,6 +150,7 @@
 				C679C9F22EBDAC4B00CE21BD /* MusicPlayerTests */,
 				C679C9FC2EBDAC4B00CE21BD /* MusicPlayerUITests */,
 				C679C9E02EBDAC4A00CE21BD /* Products */,
+				C68CCC5B2ECC0668005D1146 /* GoogleSans-Medium.ttf */,
 			);
 			sourceTree = "<group>";
 		};
@@ -293,6 +296,7 @@
 				C6AF56902EC6ADC20012EDE4 /* GoogleSansText-Medium.ttf in Resources */,
 				C649B5B42EC6EA0F00FE53FB /* GoogleSans-VariableFont_GRAD,opsz,wght.ttf in Resources */,
 				C6AF568C2EC6A9B40012EDE4 /* GoogleSansText-Regular.ttf in Resources */,
+				C68CCC5C2ECC0668005D1146 /* GoogleSans-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
