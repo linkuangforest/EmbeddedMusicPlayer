@@ -15,7 +15,7 @@ struct BufferedSlider: View {
     let onEditingChanged: (Bool) -> Void
 
     let trackHeight: CGFloat = 4
-    let thumbSize: CGFloat = 16
+    let thumbSize: CGFloat = 12
     let bufferColor = Color(hex: "#585b66")
     let trackColor = Color.gray.opacity(0.2)
     let playedColor = Color(hex: "#96989f")
