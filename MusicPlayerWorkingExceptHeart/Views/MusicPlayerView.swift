@@ -48,13 +48,15 @@ struct MusicPlayerView: View {
                     .background(Color.gray.opacity(0.1)).cornerRadius(8).clipped()
                     .accessibilityLabel("Album art")
 
-                    VStack(alignment: .leading, spacing: 4) {
+                    VStack(alignment: .leading, spacing: 16) {
                         TapToMarqueeText(text: track.title, font: titleFont, uiFont: titleUIFont, color: primaryTextColor)
                             .id("title-\(track.id)")
                             .accessibilityIdentifier("trackTitleText")
+                            .frame(height: 32)
                         TapToMarqueeText(text: track.artist, font: artistFont, uiFont: artistUIFont, color: primaryTextColor.opacity(0.5))
                             .id("artist-\(track.id)")
                             .accessibilityIdentifier("trackArtistText")
+                            .frame(height: 24)
                     }
                 }.frame(height: 88)
 
@@ -82,14 +84,15 @@ struct MusicPlayerView: View {
                         Text(timeString(from: track.duration)).font(.caption).foregroundColor(secondaryTextColor).accessibilityHidden(true)
                     }
                 }
+                .padding(.top, 16)
 
                  HStack {
                     Spacer()
-                    ControlButton(systemName: viewModel.repeatMode == .one ? "repeat.1" : "repeat", size: 36, color: viewModel.repeatMode == .off ? iconColor : accentColor, accessibilityLabel: "Repeat mode: \(viewModel.repeatMode == .off ? "Off" : viewModel.repeatMode == .one ? "Repeat One" : "Repeat All")") { viewModel.cycleRepeatMode() }
+                    ControlButton(systemName: viewModel.repeatMode == .one ? "repeat.1" : "repeat", size: 20, color: viewModel.repeatMode == .off ? iconColor : accentColor, accessibilityLabel: "Repeat mode: \(viewModel.repeatMode == .off ? "Off" : viewModel.repeatMode == .one ? "Repeat One" : "Repeat All")") { viewModel.cycleRepeatMode() }
                     Spacer()
                      Button(action: { viewModel.previousTrack() }) {
                              PreviousTrackIcon()
-                                 .frame(width: 36, height: 36)
+                                 .frame(width: 20, height: 20)
                                  .foregroundColor(iconColor)
                          }
                          .accessibilityLabel("Previous track")
@@ -105,7 +108,7 @@ struct MusicPlayerView: View {
                     Spacer()
                      Button(action: { viewModel.nextTrack() }) {
                              NextTrackIcon()
-                                 .frame(width: 36, height: 36)
+                                 .frame(width: 20, height: 20)
                                  .foregroundColor(iconColor)
                          }
                          .accessibilityLabel("Next track")
@@ -113,7 +116,7 @@ struct MusicPlayerView: View {
                     Spacer()
                      ControlButton(
                         systemName: track.isFavorited ? "heart.fill" : "heart",
-                        size: 36,
+                        size: 20,
 //                        color: track.isFavorited ? accentColor : iconColor,
                         color: track.isFavorited ? iconColor : iconColor,
                         accessibilityLabel: track.isFavorited ? "Favorited" : "Not favorited"
