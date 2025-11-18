@@ -53,10 +53,12 @@ struct MusicPlayerView: View {
                             .id("title-\(track.id)")
                             .accessibilityIdentifier("trackTitleText")
                             .frame(height: 32)
+                            .frame(width: 312, alignment: .leading)
                         TapToMarqueeText(text: track.artist, font: artistFont, uiFont: artistUIFont, color: primaryTextColor.opacity(0.5))
                             .id("artist-\(track.id)")
                             .accessibilityIdentifier("trackArtistText")
                             .frame(height: 24)
+                            .frame(width: 312, alignment: .leading)
                     }
                 }.frame(height: 88)
 
