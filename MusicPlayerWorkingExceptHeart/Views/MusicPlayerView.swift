@@ -48,7 +48,7 @@ struct MusicPlayerView: View {
                     .background(Color.gray.opacity(0.1)).cornerRadius(8).clipped()
                     .accessibilityLabel("Album art")
 
-                    VStack(alignment: .leading, spacing: 16) {
+                    VStack(alignment: .leading, spacing: 10) {
                         TapToMarqueeText(text: track.title, font: titleFont, uiFont: titleUIFont, color: primaryTextColor)
                             .id("title-\(track.id)")
                             .accessibilityIdentifier("trackTitleText")
